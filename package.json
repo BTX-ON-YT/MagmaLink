@@ -1,0 +1,14 @@
+{
+  "name": "magmalink",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@types/ws": "^8.5.4"
+  },
+  "dependencies": {
+    "undici": "^5.16.0",
+    "ws": "^8.12.0"
+  }
+}
