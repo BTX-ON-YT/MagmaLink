@@ -1,1 +1,13 @@
-# Note: This library is currently not funcional do not install it i have just published it to reserve the name
+<!--<h1 align="center">Magama Link: stable and preforment lavalink client for Node.JS</h1>-->
+
+### Table of contents
+- [Installation]()
+
+# Installation
+```
+// npm
+npm install magmalink
+
+// yarn
+yarn add magmalink
+```
