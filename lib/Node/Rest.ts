@@ -53,6 +53,10 @@ export class Rest {
         return await this.request(RestMethods.DELETE, `/v3/sessions/${this.sessionID}/players/${guildID}`);
     }
 
+    public async decodeTrack(track: string) {
+        return await this.request(RestMethods.GET, `/v3/decodetrack?encodedTrack=${track}`);
+    }
+
     private async parseResponse(res: Response) {
         let body = await res.text();
         if (body) {

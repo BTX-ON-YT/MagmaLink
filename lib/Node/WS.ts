@@ -70,8 +70,30 @@ export class WS {
                 }
                 break;
             }
+            case "event": {
+                this.event.bind(this)(data);
+            }
         }
 
         
+    }
+
+    private async event(packet: any) {
+        if(!packet?.type) return;
+
+        switch (packet.type) {
+            case "TrackStartEvent": {
+                const track = await this.node.decodeTrack(packet.encodedTrack);
+                const player = this.client.players.get(packet.guildId);
+
+                if (!player) return;
+
+                player.currentTrack = track;
+                player.playing = true;
+                player.paused = false;
+
+                this.client.emit("trackStart", player, track);
+            }
+        }
     }
 }

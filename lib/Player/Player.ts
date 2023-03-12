@@ -79,12 +79,12 @@ export class Player extends EventEmitter {
         });
     }
 
-    public async pause() {
-        this.node.rest.updatePlayer({ guildId: this.guildID, data: { paused: true } });
+    public async pause(bool: boolean = true) {
+        this.node.rest.updatePlayer({ guildId: this.guildID, data: { paused: bool } });
     }
 
-    public async resume() {
-        this.node.rest.updatePlayer({ guildId: this.guildID, data: { paused: false } });
+    public async resume(bool: boolean = false) {
+        this.node.rest.updatePlayer({ guildId: this.guildID, data: { paused: bool } });
     }
 
     public async stop() {

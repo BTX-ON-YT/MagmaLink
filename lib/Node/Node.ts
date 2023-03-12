@@ -75,6 +75,10 @@ export class Node {
         this.stats = packet;
     }
 
+    public async decodeTrack(encodedTrack: string) {
+        return this.rest.decodeTrack(encodedTrack);
+    }
+
     get penalties(): number {
         let penalties = 0;
         if (!this.connected) return penalties;
